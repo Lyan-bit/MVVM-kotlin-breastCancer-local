@@ -270,7 +270,7 @@ private val BreastCancerCREATESCHEMA =
 
     fun editBreastCancer(breastcancervo: BreastCancerVO) {
         database = writableDatabase
-        val args = arrayOf(breastcancervo.getId())
+        val args = arrayOf(breastcancervo.id)
         database.update(BreastCancerTABLENAME, putData(breastcancervo), "id =?", args)
     }
 
@@ -282,33 +282,33 @@ private val BreastCancerCREATESCHEMA =
 
 	private fun setData(cursor: Cursor): BreastCancerVO {
 		val breastcancervo = BreastCancerVO()
-		breastcancervo.setId(cursor.getString(BreastCancerCOLID))
-		breastcancervo.setAge(cursor.getInt(BreastCancerCOLAGE))
-		breastcancervo.setBmi(cursor.getFloat(BreastCancerCOLBMI))
-		breastcancervo.setGlucose(cursor.getFloat(BreastCancerCOLGLUCOSE))
-		breastcancervo.setInsulin(cursor.getFloat(BreastCancerCOLINSULIN))
-		breastcancervo.setHoma(cursor.getFloat(BreastCancerCOLHOMA))
-		breastcancervo.setLeptin(cursor.getFloat(BreastCancerCOLLEPTIN))
-		breastcancervo.setAdiponectin(cursor.getFloat(BreastCancerCOLADIPONECTIN))
-		breastcancervo.setResistin(cursor.getFloat(BreastCancerCOLRESISTIN))
-		breastcancervo.setMcp(cursor.getFloat(BreastCancerCOLMCP))
-		breastcancervo.setOutcome(cursor.getString(BreastCancerCOLOUTCOME))
+		breastcancervo.id = cursor.getString(BreastCancerCOLID)
+		breastcancervo.age = cursor.getInt(BreastCancerCOLAGE)
+		breastcancervo.bmi = cursor.getFloat(BreastCancerCOLBMI)
+		breastcancervo.glucose = cursor.getFloat(BreastCancerCOLGLUCOSE)
+		breastcancervo.insulin = cursor.getFloat(BreastCancerCOLINSULIN)
+		breastcancervo.homa = cursor.getFloat(BreastCancerCOLHOMA)
+		breastcancervo.leptin = cursor.getFloat(BreastCancerCOLLEPTIN)
+		breastcancervo.adiponectin = cursor.getFloat(BreastCancerCOLADIPONECTIN)
+		breastcancervo.resistin = cursor.getFloat(BreastCancerCOLRESISTIN)
+		breastcancervo.mcp = cursor.getFloat(BreastCancerCOLMCP)
+		breastcancervo.outcome = cursor.getString(BreastCancerCOLOUTCOME)
 		return breastcancervo
 	}
 
 	private fun putData(breastcancervo: BreastCancerVO): ContentValues {
 		val wr = ContentValues(BreastCancerNUMBERCOLS)
-		wr.put(BreastCancerCOLS[BreastCancerCOLID], breastcancervo.getId())
-		wr.put(BreastCancerCOLS[BreastCancerCOLAGE], breastcancervo.getAge())
-		wr.put(BreastCancerCOLS[BreastCancerCOLBMI], breastcancervo.getBmi())
-		wr.put(BreastCancerCOLS[BreastCancerCOLGLUCOSE], breastcancervo.getGlucose())
-		wr.put(BreastCancerCOLS[BreastCancerCOLINSULIN], breastcancervo.getInsulin())
-		wr.put(BreastCancerCOLS[BreastCancerCOLHOMA], breastcancervo.getHoma())
-		wr.put(BreastCancerCOLS[BreastCancerCOLLEPTIN], breastcancervo.getLeptin())
-		wr.put(BreastCancerCOLS[BreastCancerCOLADIPONECTIN], breastcancervo.getAdiponectin())
-		wr.put(BreastCancerCOLS[BreastCancerCOLRESISTIN], breastcancervo.getResistin())
-		wr.put(BreastCancerCOLS[BreastCancerCOLMCP], breastcancervo.getMcp())
-		wr.put(BreastCancerCOLS[BreastCancerCOLOUTCOME], breastcancervo.getOutcome())
+		wr.put(BreastCancerCOLS[BreastCancerCOLID], breastcancervo.id)
+		wr.put(BreastCancerCOLS[BreastCancerCOLAGE], breastcancervo.age)
+		wr.put(BreastCancerCOLS[BreastCancerCOLBMI], breastcancervo.bmi)
+		wr.put(BreastCancerCOLS[BreastCancerCOLGLUCOSE], breastcancervo.glucose)
+		wr.put(BreastCancerCOLS[BreastCancerCOLINSULIN], breastcancervo.insulin)
+		wr.put(BreastCancerCOLS[BreastCancerCOLHOMA], breastcancervo.homa)
+		wr.put(BreastCancerCOLS[BreastCancerCOLLEPTIN], breastcancervo.leptin)
+		wr.put(BreastCancerCOLS[BreastCancerCOLADIPONECTIN], breastcancervo.adiponectin)
+		wr.put(BreastCancerCOLS[BreastCancerCOLRESISTIN], breastcancervo.resistin)
+		wr.put(BreastCancerCOLS[BreastCancerCOLMCP], breastcancervo.mcp)
+		wr.put(BreastCancerCOLS[BreastCancerCOLOUTCOME], breastcancervo.outcome)
 		return wr
 	}
 
