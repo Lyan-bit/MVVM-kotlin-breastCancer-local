@@ -36,17 +36,17 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         } else {
             val vo: BreastCancerVO = res[0]
             val itemx = BreastCancer.createByPKBreastCancer(value)
-            itemx.id = vo.getId()
-            itemx.age = vo.getAge()
-            itemx.bmi = vo.getBmi()
-            itemx.glucose = vo.getGlucose()
-            itemx.insulin = vo.getInsulin()
-            itemx.homa = vo.getHoma()
-            itemx.leptin = vo.getLeptin()
-            itemx.adiponectin = vo.getAdiponectin()
-            itemx.resistin = vo.getResistin()
-            itemx.mcp = vo.getMcp()
-            itemx.outcome = vo.getOutcome()
+            itemx.id = vo.id
+            itemx.age = vo.age
+            itemx.bmi = vo.bmi
+            itemx.glucose = vo.glucose
+            itemx.insulin = vo.insulin
+            itemx.homa = vo.homa
+            itemx.leptin = vo.leptin
+            itemx.adiponectin = vo.adiponectin
+            itemx.resistin = vo.resistin
+            itemx.mcp = vo.mcp
+            itemx.outcome = vo.outcome
             itemx
         }
     }
@@ -59,7 +59,7 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         currentBreastCancers = dbm.listBreastCancer()
         val res: ArrayList<String> = ArrayList()
         for (breastCancer in currentBreastCancers.indices) {
-            res.add(currentBreastCancers[breastCancer].getId())
+            res.add(currentBreastCancers[breastCancer].id)
         }
         return res
     }
@@ -68,7 +68,7 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         currentBreastCancers = dbm.listBreastCancer()
         val res: ArrayList<String> = ArrayList()
         for (breastCancer in currentBreastCancers.indices) {
-            res.add(currentBreastCancers[breastCancer].getAge().toString())
+            res.add(currentBreastCancers[breastCancer].age.toString())
         }
         return res
     }
@@ -77,7 +77,7 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         currentBreastCancers = dbm.listBreastCancer()
         val res: ArrayList<String> = ArrayList()
         for (breastCancer in currentBreastCancers.indices) {
-            res.add(currentBreastCancers[breastCancer].getBmi().toString())
+            res.add(currentBreastCancers[breastCancer].bmi.toString())
         }
         return res
     }
@@ -86,7 +86,7 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         currentBreastCancers = dbm.listBreastCancer()
         val res: ArrayList<String> = ArrayList()
         for (breastCancer in currentBreastCancers.indices) {
-            res.add(currentBreastCancers[breastCancer].getGlucose().toString())
+            res.add(currentBreastCancers[breastCancer].glucose.toString())
         }
         return res
     }
@@ -95,7 +95,7 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         currentBreastCancers = dbm.listBreastCancer()
         val res: ArrayList<String> = ArrayList()
         for (breastCancer in currentBreastCancers.indices) {
-            res.add(currentBreastCancers[breastCancer].getInsulin().toString())
+            res.add(currentBreastCancers[breastCancer].insulin.toString())
         }
         return res
     }
@@ -104,7 +104,7 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         currentBreastCancers = dbm.listBreastCancer()
         val res: ArrayList<String> = ArrayList()
         for (breastCancer in currentBreastCancers.indices) {
-            res.add(currentBreastCancers[breastCancer].getHoma().toString())
+            res.add(currentBreastCancers[breastCancer].homa.toString())
         }
         return res
     }
@@ -113,7 +113,7 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         currentBreastCancers = dbm.listBreastCancer()
         val res: ArrayList<String> = ArrayList()
         for (breastCancer in currentBreastCancers.indices) {
-            res.add(currentBreastCancers[breastCancer].getLeptin().toString())
+            res.add(currentBreastCancers[breastCancer].leptin.toString())
         }
         return res
     }
@@ -122,7 +122,7 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         currentBreastCancers = dbm.listBreastCancer()
         val res: ArrayList<String> = ArrayList()
         for (breastCancer in currentBreastCancers.indices) {
-            res.add(currentBreastCancers[breastCancer].getAdiponectin().toString())
+            res.add(currentBreastCancers[breastCancer].adiponectin.toString())
         }
         return res
     }
@@ -131,7 +131,7 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         currentBreastCancers = dbm.listBreastCancer()
         val res: ArrayList<String> = ArrayList()
         for (breastCancer in currentBreastCancers.indices) {
-            res.add(currentBreastCancers[breastCancer].getResistin().toString())
+            res.add(currentBreastCancers[breastCancer].resistin.toString())
         }
         return res
     }
@@ -140,7 +140,7 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         currentBreastCancers = dbm.listBreastCancer()
         val res: ArrayList<String> = ArrayList()
         for (breastCancer in currentBreastCancers.indices) {
-            res.add(currentBreastCancers[breastCancer].getMcp().toString())
+            res.add(currentBreastCancers[breastCancer].mcp.toString())
         }
         return res
     }
@@ -149,7 +149,7 @@ class BreastCancerViewModel constructor(context: Context): ViewModel() {
         currentBreastCancers = dbm.listBreastCancer()
         val res: ArrayList<String> = ArrayList()
         for (breastCancer in currentBreastCancers.indices) {
-            res.add(currentBreastCancers[breastCancer].getOutcome().toString())
+            res.add(currentBreastCancers[breastCancer].outcome.toString())
         }
         return res
     }
